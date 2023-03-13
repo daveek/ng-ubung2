@@ -3,8 +3,11 @@
   <input type="text" [(ngModel)]="description" />
   <input type="text" [(ngModel)]="category" />
   <input type="checkbox" [(ngModel)]="done" /> -->
-  <p>{{ label }}</p>
-  <p>{{ description }}</p>
-  <p>{{ category }}</p>
-  <input type="checkbox" name="done" id="done" />
+
+  <input type="checkbox" clrCheckbox name="done" id="done" />
+  <label>
+    <span>{{ label }}</span>
+    <span>{{ description }}</span>
+    <span>{{ category }}</span>
+  </label>
 </div>
