@@ -1,0 +1,10 @@
+<div>
+  <p>list of Items works!</p>
+  <br />
+  <item
+    *ngFor="let item of itemsList; let i = index; trackBy: trackBy"
+    [label]="item.label"
+    [description]="item.description"
+    [category]="item.category"
+  ></item>
+</div>
