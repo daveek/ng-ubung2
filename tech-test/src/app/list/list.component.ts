@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
+import { take, takeUntil } from "rxjs/operators";
 import { Item } from "../shared/models/item";
 import { ItemsService } from "../shared/services/items-service.service";
 
@@ -26,7 +26,7 @@ export class ListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.itemsService
       .getItems()
-      .pipe(takeUntil(this._onDestroy$))
+      .pipe(take(1), takeUntil(this._onDestroy$))
       .subscribe(
         (items: Item[]) => {
           this.itemsList = items;
